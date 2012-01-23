@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- <PropertyList include="jenny-jsbsim-cnf.xml"> -->
+<PropertyList include="jenny-yasim-cnf.xml">
+
+  <sim>
+
+    <description>Curtiss Jenny (YASim)</description>
+    <author>Emmanuel BARANGER (3D/FDM)</author>
+
+    <rating>
+      <FDM type="int">     2 </FDM>
+      <systems type="int"> 1 </systems>
+      <cockpit type="int"> 1 </cockpit>
+      <model type="int">   3 </model>
+    </rating>
+
+  </sim>
+
+</PropertyList>
+
