@@ -35,6 +35,7 @@
     <object-name>aileB</object-name>
     <object-name>aileronG</object-name>
     <object-name>aileronD</object-name>
+    <object-name>ailes2</object-name>
     <object-name>profondeur</object-name>
     <object-name>direction</object-name>
     <object-name>montants</object-name>
@@ -76,6 +77,7 @@
     <object-name>aileB</object-name>
     <object-name>aileronG</object-name>
     <object-name>aileronD</object-name>
+    <object-name>ailes2</object-name>
     <object-name>profondeur</object-name>
     <object-name>direction</object-name>
     <object-name>montants</object-name>
@@ -95,35 +97,16 @@
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
-<!--
-    <diffuse>
-      <red-prop>diffuse/red</red-prop>
-      <green-prop>diffuse/green</green-prop>
-      <blue-prop>diffuse/blue</blue-prop>
-    </diffuse>
-
-    <ambient>
-      <red-prop>ambient/red</red-prop>
-      <green-prop>ambient/green</green-prop>
-      <blue-prop>ambient/blue</blue-prop>
-    </ambient>
--->
     <specular>
       <red-prop>specular/red</red-prop>
       <green-prop>specular/green</green-prop>
       <blue-prop>specular/blue</blue-prop>
     </specular>
-
     <emission>
       <red-prop>emission/red</red-prop>
       <green-prop>emission/green</green-prop>
       <blue-prop>emission/blue</blue-prop>
     </emission>
-<!--
-    <shininess>
-      <shininess-prop>shininess</shininess-prop>
-    </shininess>
--->
   </animation>
 
   <effect>
@@ -144,6 +127,21 @@
     <object-name>propdisc</object-name>
     <object-name>vitres</object-name>
   </animation>
+
+  <!-- Une ombre pour OSG -->
+  <model>
+    <path>Aircraft/Curtiss-Jenny/Models/shadow.xml</path>
+    <offsets>
+      <x-m>  0.007 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -1.165 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Intérieur -->
+  <model>
+    <path>Aircraft/Curtiss-Jenny/Models/Interior/interior.xml</path>
+  </model>
 
   <!-- Cranking -->
   <!-- Left -->
@@ -195,21 +193,6 @@
       <y-m>  0.000 </y-m>
       <z-m> -0.510 </z-m>
     </offsets>
-  </model>
-
-  <!-- Une ombre pour OSG -->
-  <model>
-    <path>Aircraft/Curtiss-Jenny/Models/shadow.xml</path>
-    <offsets>
-      <x-m>  0.007 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -1.165 </z-m>
-    </offsets>
-  </model>
-
-  <!-- Intérieur -->
-  <model>
-    <path>Aircraft/Curtiss-Jenny/Models/Interior/interior.xml</path>
   </model>
 
   <!-- L'hélice --> 
