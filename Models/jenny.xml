@@ -13,9 +13,9 @@
       var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
       var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
       
-      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
-      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
-    
+      var crew_door = self.getNode("sim/model/door-positions/crew/position-norm", 1);
+      var passenger_door = self.getNode("sim/model/door-positions/passenger/position-norm", 1);
+      
       crew_door.alias(float_0);
       passenger_door.alias(float_1);
     </load>
@@ -30,6 +30,7 @@
   <animation>
     <!-- Objets opaques -->
     <object-name>capot</object-name>
+    
     <object-name>fuselage</object-name>
     <object-name>aileH</object-name>
     <object-name>aileB</object-name>
@@ -52,7 +53,6 @@
     <object-name>bol</object-name>
     <object-name>trous</object-name>
 
-    <!-- Objets transparents -->
     <object-name>cables</object-name>
     <object-name>cableaileronGH</object-name>
     <object-name>cableaileronGB</object-name>
@@ -64,6 +64,8 @@
     <object-name>cabledirectionG</object-name>
     <object-name>cabledirectionD</object-name>
     <object-name>cabledirection</object-name>
+    
+    <!-- Objets transparents -->
     <object-name>propdisc</object-name>
     <object-name>propblur</object-name>
     <object-name>vitres</object-name>
@@ -72,6 +74,7 @@
   <animation>
     <type>material</type>
     <object-name>capot</object-name>
+    
     <object-name>fuselage</object-name>
     <object-name>aileH</object-name>
     <object-name>aileB</object-name>
@@ -97,11 +100,6 @@
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
-    <specular>
-      <red-prop>specular/red</red-prop>
-      <green-prop>specular/green</green-prop>
-      <blue-prop>specular/blue</blue-prop>
-    </specular>
     <emission>
       <red-prop>emission/red</red-prop>
       <green-prop>emission/green</green-prop>
@@ -113,21 +111,19 @@
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
     <object-name>capot</object-name>
   </effect>
-
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+  
+  <effect>
+    <inherits-from>Aircraft/Curtiss-Jenny/Models/Effects/Glass/glass</inherits-from>
     <object-name>vitres</object-name>
-  </animation>
-
-  <animation>
-    <type>noshadow</type>
-    <object-name>propblur</object-name>
+  </effect>
+  
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>vitres</object-name>
     <object-name>propdisc</object-name>
-    <object-name>vitres</object-name>
-  </animation>
-
+    <object-name>propblur</object-name>
+  </effect>
+  
   <!-- Une ombre pour OSG -->
   <model>
     <path>Aircraft/Curtiss-Jenny/Models/shadow.xml</path>
@@ -247,6 +243,12 @@
   <animation>
     <type>spin</type>
     <object-name>HeliceComplete</object-name>
+    <condition>
+      <greater-than>
+        <property>engines/engine[0]/rpm</property>
+        <value> 5 </value>
+      </greater-than>
+    </condition>
     <property>engines/engine[0]/rpm</property>
     <factor> 1 </factor>
     <center>
@@ -530,4 +532,3 @@
   </animation>
 
 </PropertyList>
-

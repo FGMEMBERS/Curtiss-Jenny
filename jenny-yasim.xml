@@ -13,7 +13,7 @@
      Cruise speed  : 52 kt       (  97 km/h )
 -->
 
-<airplane mass="1390" >
+<airplane mass="1390" version="YASIM_VERSION_CURRENT">
 
   <approach speed="35" aoa="4" fuel="0.2">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
@@ -101,9 +101,9 @@
              takeoff-power="105"
              takeoff-rpm="1800">
              <actionpt x="4.062" y="0" z="0.025"/>
-             <piston-engine eng-rpm="1400" 
+             <piston-engine eng-power="90"
+                            eng-rpm="1400" 
                             alt="2000" 
-                            eng-power="90"
                             displacement="503" 
                             compression="4.9"/>
              <control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle"/>
